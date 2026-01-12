@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" type="image/x-icon" href="resources/images/padlock.png">
+    <title>Cryptogramme - Documentation</title>
+</head>
+
+<body>
+    <header>
+        <button id="menuButton"><img src="resources/images/burger-bar.png" style="width: 45px;" onclick="menuButton()"></button><h1>Cryptogramme</h1>
+    </header>
+
+    <Summary id="summary">
+        <h2>Summary</h2>
+        <h3><a href="#generalities">1: Generalities</a></h3>
+        <li>
+            <ul><a href="#summary">Summary</a></ul>
+             <ul><a href="#details">Program details</a></ul>
+            <ul><a href="#download">Download</a></ul>
+            <ul><a href="#setup">Setup</a></ul>
+            <ul><a href="#localization">Localization</a></ul>
+        </li>
+        <h3><a href="#rsa">2: RSA</a></h3>
+        <li>
+            <ul><a href="#how_to_use_RSA">How to use</a></ul>
+            <ul><a href="#generate_RSA_Key">Generate keys</a></ul>
+            <ul><a href="#encrypt_RSA">Encrypt a message</a></ul>
+            <ul><a href="#decrypt_RSA">Decrypt a message</a></ul>
+        </li>
+        <h3><a href="#aes">3: AES</a></h3>
+        <li>
+            <ul><a href="#how_to_use_AES">How to use</a></ul>
+            <ul><a href="#generate_AES_Key">Generate key</a></ul>
+            <ul><a href="#encrypt_AES">Encrypt a file</a></ul>
+            <ul><a href="#decrypt_AES">Decrypt a file</a></ul>
+        </li>
+    </Summary>
+
+    <div id="content">
+        
+        <div id="generalities">
+            <h2>1: Generalities</h2>
+
+            <p id="details">
+                <h3>Program details</h3>
+                <strong>Program name:</strong> Cryptogramme<br>
+                <strong>Version:</strong> 1.0<br>
+                <strong>Dependencies:</strong> Java 21 or above<br>
+                <strong>Size:</strong> < 550 Ko<br>
+                <strong>Languages:</strong> English, French and German
+            </p>
+
+            <p id="download">
+                <h3>Download</h3>
+
+                <h4>Download from git:</h4>
+                To download the project from git use this command in your terminal, where you want it to be:
+                <pre>
+                    <code class="language-shell">git clone https://github.com/AilysGeister/cryptogramme.git</code>
+                </pre>
+
+                <h4>Download from release:</h4>
+                Click on the button bellow to install the runnable jar file, once it is downloaded, you can run it:<br>
+                <a href="https://github.com/AilysGeister/cryptogramme/releases/download/v1.0.0/Cryptogramme-1.0.jar"><img src="https://img.shields.io/badge/Download-JAR-blue"></a>
+                
+            </p>
+            
+            <p id="setup">
+                <h3>Setup</h3>
+                When the programm is installed you have to configure the exports and keys directories.
+                These directories are where the saved key and crypt are located.<br>
+                Go to <strong>File > Settings</strong> enter the <strong>Default export location</strong> and <strong>Default key location</strong> fields.
+                These fields correspond of the directories where the software will save the keys and files.<br>
+                Once your modifications are done, click on the save button.
+            </p>
+
+            <p id="localization">
+                <h3>Localization</h3>
+                To update the language go to <strong> File > Settings</strong>, select the language you want with the combo box.<br>
+                You need to restart the software the see the changes.
+            </p>
+        </div>
+
+        <div id="rsa">
+            <h2>2: RSA</h2>
+
+            <p id="how_to_use_RSA">
+                <h3>How to use</h3>
+                RSA is an algorythm wich use asymetrics keys to encrypt and decrypt messages. This software allow to encrypt and decrypt messages using privates and publics keys.
+                But it does not allowed to produce RSA signatures.
+                Suppossing two personn Alice and Bob. Alice want to recieve secret messages from Bob. So Alice generate two keys, the public and the private key.
+                Alice give the public key to Bob, which how use it to encrypt his message. Bob transmit is encrypted message to Alice, which one decrypt it with the private Key.
+            </p>
+
+            <p id="generate_RSA_Key">
+                <h3>Generate keys</h3>
+                To generate RSA keys just click on the button "<strong>Generate RSA Keys</strong>" in the title screen. Select your key size (4096 or 2048 bits) and click to the generate button.
+                The public and private keys will appears in the corresponding fields. To used it you have to downloaded it by clicking on the corresponding save button <img src="resources/images/file.png" style="height: 25px;">.
+            </p>
+
+            <p id="encrypt_RSA">
+                <h3>Encrypt a message</h3>
+                To encrypt your secret message using RSA algorythm, click on "<strong>Encrypt a Message</strong>" button on the title screen.<br>
+                First select your public key, you can write the file's location in the text field, or select it with the search button <img src="resources/images/open.png" height="25px">.
+                Then click on "validate" to validate your key. If all is correct the encrypt area will be unlocked.
+                Enter your secret message in the text area.<br> <strong>Be aware:</strong> RSA algorythm is used for short messages, the max length correspond to length of the key (4096/2048).<br>
+                Once you have witten your secret message click on the "<strong>Encrypt</strong>" button. The encrypted message will appears in the last text area.
+                You can download the encrypted message by clicking on the save button <img src="resources/images/file.png" style="height: 25px;">.<br>
+                Once everything done, click on the "<strong>Reset</strong>" button.
+            </p>
+
+            <p id="decrypt_RSA">
+                <h3>Decrypt a message</h3>
+                To decrypt a secret message using RSA algorythm, click on "<strong>Decrypt a Message</strong>" button on the title screen.<br>
+                First select your private key, you can write the file's location in the text field, or select it with the search button <img src="resources/images/open.png" height="25px">.
+                Then click on "validate" to validate your key. If all is correct the decrypt area will be unlocked.<br>
+                Enter encrypted message in the text area.
+                Once you have witten your encrypted message click on the "<strong>Decrypt</strong>" button. The secret message will appears in the last text area.
+                You can download the decrypted message by clicking on the save button <img src="resources/images/file.png" style="height: 25px;">.<br>
+                Once everything done, click on the "<strong>Reset</strong>" button.
+            </p>
+        </div>
+
+        <div id="aes">
+            <h2>3: AES</h2>
+
+            <p id="how_to_use_AES">
+                <h3>How to use</h3>
+                AES algorythm is use for encrypt file with a single secured key.
+                In opposition of RSA algorythm, you use the same key for encyption and decryption.
+            </p>
+
+            <p id="generate_AES_Key">
+                <h3>Generate key</h3>
+                To generate AES keys just click on the button "<strong>Generate AES Keys</strong>" in the title screen. Select your key size (128, 192 or 256 bits) and click to the generate button.<br>
+                The key will appears in the result fields. To used it you have to downloaded it by clicking on the save button <img src="resources/images/file.png" style="height: 25px;">.
+            </p>
+
+            <p id="encrypt_AES">
+                <h3>Encrypt a file</h3>
+                To encrypt your file using AES algorythm, click on "<strong>Encrypt a File</strong>" button on the title screen.<br>
+                First select your key, you can write the file's location in the corresponding text field, or select it with the search button <img src="resources/images/open.png" height="25px">.<br>
+                Then select the file you want to encrypt, by enter it's location in corresponding text field, or select it with the search button <img src="resources/images/open.png" height="25px">.<br>
+                Once you have for key and file, click on the "<stong>Encrypt</stong>" button. It will encrypt your file and save it to the exports directories choose in the settings.
+            </p>
+
+            <p id="decrypt_AES">
+                <h3>Decrypt a file</h3>
+                To decrypt your encrypted file using AES algorythm, click on "<strong>Decrypt a File</strong>" button on the title screen.<br>
+                First select your key, you can write the file's location in the corresponding text field, or select it with the search button <img src="resources/images/open.png" height="25px">.<br>
+                Then select the file you want to decrypt, by enter it's location in corresponding text field, or select it with the search button <img src="resources/images/open.png" height="25px">.<br>
+                And for the last step, choose the output name of the decrypted file (do not forget the file extension).<br>
+                Once you have for key, input file and output file name, click on the "<stong>Decrypt</stong>" button. It will decrypt your file and save it to the exports directories choose in the settings.
+            </p>
+            </p>
+        </div>
+    </div>
+    <footer>
+        <a href="https://github.com/AilysGeister/cryptogramme/"><img src="https://img.shields.io/badge/GitHub-repo-blue?logo=github"></a>
+        <a href="https://github.com/AilysGeister/cryptogramme/releases/download/v1.0.0/Cryptogramme-1.0.jar"><img src="https://img.shields.io/badge/Download-JAR-blue"></a>
+        <a href="https://www.youtube.com/playlist?list=PLmaPrCz1uPNNV1YovH_GiaoEVQfG54Cfr"><img src="https://img.shields.io/badge/Youtube-tutorial-red?logo=youtube"></a>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>

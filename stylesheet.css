@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    background-color: rgb(250, 249, 246);
+    font-size: large;
+}
+
+header {
+    color: azure;
+    background-color: rgb(60, 93, 160);
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    
+    button {
+        background-color: rgb(27, 56, 112);
+        border-radius: 25%;
+        border: none;
+        height: 50px;
+        width: 50px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+footer {
+    text-align: center;
+}
+
+#content {
+    text-align: center;
+}
+
+summary {
+    border: 1px solid black;
+    background-color: rgb(236, 236, 236);
+    width: 50%;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+code {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(52, 52, 52);
+    color: yellow;
+}
