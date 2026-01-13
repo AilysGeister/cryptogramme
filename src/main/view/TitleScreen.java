@@ -186,7 +186,7 @@ public class TitleScreen extends JPanel {
 		gbc_lblNewLabel.gridy = 0;
 		infoJPanel.add(lblNewLabel, gbc_lblNewLabel);
 		
-		JLabel versionID = new JLabel("Version: 1.0");
+		JLabel versionID = new JLabel("Version 1.1");
 		versionID.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		GridBagConstraints gbc_versionID = new GridBagConstraints();
 		gbc_versionID.insets = new Insets(0, 0, 5, 0);
