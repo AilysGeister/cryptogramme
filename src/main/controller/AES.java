@@ -136,7 +136,7 @@ public class AES {
 	public static void cryptButton(CryptAESJPanel panel, String type) throws IOException {
 		//Initialization:
 		KeyAES key;
-		String keyLocation = panel.keyLocationJTextField.getText(), inputFileLocation = panel.fileLocationJTextField.getText();
+		String keyLocation = panel.keyLocationJTextField.getText(), inputFileLocation = panel.fileLocationJTextField.getText(), outputPath;
 		File inputFile = new File(inputFileLocation);
 		boolean isValid = false;
 		
@@ -163,14 +163,15 @@ public class AES {
 					case "encrypt":
 						try {
 							//Creating output file:
-							File outputFile = new File(fileName(Settings.getStrParameter("export_directory")).toString());
+							outputPath = fileName(Settings.getStrParameter("export_directory")).toString();
+							File outputFile = new File(outputPath);
 							
 							//Encrypt the file:
 							encrypt(key, inputFile, outputFile);
 							
 							//Return message:
 							panel.returnMsgJLabel.setForeground(new Color(0,175,0));
-							panel.returnMsgJLabel.setText(PropertiesReader.getString("successSaveFile"));
+							panel.returnMsgJLabel.setText(PropertiesReader.getString("successSaveFile")+outputPath+" !");
 						} catch (InvalidKeyException | NoSuchPaddingException | InvalidAlgorithmParameterException | BadPaddingException | IllegalBlockSizeException e) {
 							showError(panel.returnMsgJLabel,"failEncryptAES");
 							e.printStackTrace();
@@ -180,14 +181,15 @@ public class AES {
 					case "decrypt":
 						try {
 							//Creating output file:
-							File outputFile = new File(Settings.getStrParameter("export_directory")+panel.outputFileJTextField.getText());
+							outputPath = Settings.getStrParameter("export_directory")+panel.outputFileJTextField.getText();
+							File outputFile = new File(outputPath);
 							
 							//decrypt the file:
 							decrypt(key, inputFile, outputFile);
 							
 							//Return message:
 							panel.returnMsgJLabel.setForeground(new Color(0,175,0));
-							panel.returnMsgJLabel.setText(PropertiesReader.getString("successSaveFile"));
+							panel.returnMsgJLabel.setText(PropertiesReader.getString("successSaveFile")+outputPath+" !");
 						} catch (InvalidKeyException | NoSuchPaddingException | InvalidAlgorithmParameterException | BadPaddingException | IllegalBlockSizeException e) {
 							showError(panel.returnMsgJLabel,"failDecryptAES");
 							e.printStackTrace();
